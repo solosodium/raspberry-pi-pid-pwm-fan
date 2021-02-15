@@ -1,6 +1,6 @@
 raspberry-pi-pid-pwm-fan
 ===
-A PID tuned PWM fan Python script for Raspberry Pi.
+A Python script to regulate Raspberry Pi CPU temperature using PID tuned PWM fan.
 
 ## Required Python Packages
 
