@@ -1,0 +1,44 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          pwm_fan
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: PWM fan controller.
+# Description:       This service is used to control a PWM fan with PID loop.
+### END INIT INFO
+
+DIR=/usr/local/bin
+FILE=pwm_fan.py
+
+do_start() {
+  echo "starting pwm_fan"
+  # TODO: Change if pwm_fan.py is in a different location.
+  python3 $DIR/$FILE &
+}
+
+do_stop() {
+  echo "stopping pwm_fan"
+  # TODO: Change if pwm_fan.py is in a different location.
+  pkill -f "python3 $DIR/$FILE"
+}
+
+case "$1" in
+
+  start|stop)
+    do_${1}
+    ;;
+
+  restart)
+    do_stop
+    do_start
+    ;;
+
+  *)
+    echo "usage: /etc/init.d/pwm_fan {start|stop|restart}"
+    exit1
+    ;;
+
+esac
+exit 0
