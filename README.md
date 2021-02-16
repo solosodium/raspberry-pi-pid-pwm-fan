@@ -4,7 +4,7 @@ A Python script to regulate Raspberry Pi CPU temperature using PID tuned PWM fan
 
 ## Hardware
 
-Fritzing breadboard connection:
+Fritzing breadboard connection: Notice the base of the PNP transistor is connected to GPIO 18 (or pin 12) which is the only PWM enabled pin. The emitter of the transistor is connected to the ground and the collector of the transistor is connected to the negative terminal of the fan. Optional back EMF diode and small capacitor are recommended.
 
 ![Fritzing](fritzing.png)
 
