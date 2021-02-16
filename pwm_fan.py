@@ -24,15 +24,15 @@ class PidPwmFan:
         """PwmFan class constructor.
 
         Args:
-            pin (int): The PWM pin number on RPi (default is 18)
-            loop_int (float): The loop interval of the PID loop
-            pwm_freq (float): The PWM frequency
-            pwm_min (float): The minimum PWM value
-            pwm_max (float): The maximum PWM value
-            target_temp (float): The desired CPU temperature
-            pid (tuple): Kp, Ki and Kd gains
-            init_pwm (float): Initial PWM value
-            window_int (float): Window interval to keep past error measurements
+            pin (int):           The PWM pin number on RPi (default is 18)
+            loop_int (float):    The loop interval of the PID loop (seconds)
+            pwm_freq (float):    The PWM frequency (Hz)
+            pwm_min (float):     The minimum PWM value (0 ~ 1.0)
+            pwm_max (float):     The maximum PWM value (0 ~ 1.0)
+            target_temp (float): The desired CPU temperature (degree Celsius)
+            pid (tuple):         Kp, Ki and Kd for PID tuning
+            init_pwm (float):    Initial PWM value (0 ~ 1.0)
+            window_int (float):  Window interval to keep past error measurements (seconds)
         """
         self.pin = pin
         self.loop_int = loop_int
