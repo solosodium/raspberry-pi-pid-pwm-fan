@@ -76,3 +76,19 @@ then type ```:set ff=unix```, then save with ```wq!```.
 ```
 sudo reboot
 ```
+
+## Tuning
+
+Although the script comes with default parameters to provide an adequate tuning. You can supply any of the following arguments when constructing the `PidPwmFan` class to achieve optimal performance.
+
+```
+pin (int):           The PWM pin number on RPi (default is 18)
+loop_int (float):    The loop interval of the PID loop (seconds)
+pwm_freq (float):    The PWM frequency (Hz)
+pwm_min (float):     The minimum PWM value (0 ~ 1.0)
+pwm_max (float):     The maximum PWM value (0 ~ 1.0)
+target_temp (float): The desired CPU temperature (degree Celsius)
+pid (tuple):         Kp, Ki and Kd for PID tuning
+init_pwm (float):    Initial PWM value (0 ~ 1.0)
+window_int (float):  Window interval to keep past error measurements (seconds)
+```
